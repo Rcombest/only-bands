@@ -26,7 +26,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  CurrentFav.findById(req.params.id)
+  .populate('owner')
+  .then(currentfav => {
+    res.render('currentfavs/show', {
+      currentfav,
+      title: "current favs show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/currentfavs')
+  })
+}
+
 export {
   index,
   create,
+  show,
 }

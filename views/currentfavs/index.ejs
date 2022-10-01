@@ -20,7 +20,11 @@
   <h2>The Vibes</h2>
 	<ul>
   <% currentfavs.forEach(currentfav => { %>
-    <li>🎵 <%= currentfav.song %> by <%= currentfav.band %></li>
+    <li>
+      🎵 
+      <a href="/currentfavs/<%= currentfav._id %>"><%= currentfav.song %></a> 
+      by <%= currentfav.band %>
+    </li>
   <% }) %>
   </ul>
 </section>
