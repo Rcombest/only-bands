@@ -14,6 +14,19 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  CurrentFav.create(req.body)
+  .then(currentfav => {
+    res.redirect('/currentfavs')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/currentfavs')
+  })
+}
+
 export {
   index,
+  create,
 }

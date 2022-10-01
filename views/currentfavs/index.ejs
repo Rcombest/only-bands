@@ -3,10 +3,24 @@
 
 <section>
   <h1>🎵Current User Fav's🎵</h1>
+  <% if (user) { %>
+    <h2>Whats the vibes?</h2>
+    <form action="/currentfavs" method="POST">
+      <label>
+        Song: 
+        <input type="text" name="song" autocomplete="off">
+      </label>
+      <label>
+        Band:
+        <input type="text" name="band">
+      </label>
+      <button type="submit">Add Current Favorite</button>
+    </form>
+  <% } %>
   <h2>The Vibes</h2>
 	<ul>
   <% currentfavs.forEach(currentfav => { %>
-    <li>🎵 <%= currentfav.song %> by <%= currentfav.name %></li>
+    <li>🎵 <%= currentfav.song %> by <%= currentfav.band %></li>
   <% }) %>
   </ul>
 </section>
