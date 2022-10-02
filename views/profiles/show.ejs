@@ -36,6 +36,15 @@
       <h3>
         <%= getBand() %>
         <%= band.name %>'s <%= band.album %> | Genre: <%= band.genre %>
+        <% if (isSelf) { %>
+          <form 
+          action="/profiles/bands/<%= band._id %>?_method=DELETE"
+          method="POST"
+          style="display: inline-block;"
+          >
+            <button type="submit">Delete Fav ❌</button>
+        </form>
+        <% } %> 
       </h3>
     <% }) %>
   <% } else { %>
