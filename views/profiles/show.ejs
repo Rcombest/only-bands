@@ -10,6 +10,39 @@
     >
   </div>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf) { %>
+    <h2>Add a Fav Band!</h2>
+    <form action="/profiles/<%= profile._id %>/bands" method="POST">
+      <label>
+        Band Name:
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Fav Album:
+        <input type="text" name="album" autocomplete="off">
+      </label>
+      <label>
+        Genre:
+        <input type="text" name="genre" autocomplete="off">
+      </label>
+      <button type="submit">🎵Add Fav Band🎵</button>
+    </form>
+  <% } %>
+  <% if (profile.bands.length) { %>
+    <h2>
+      <%= isSelf ? "Your" : `${profile.name}'s` %> All Time Favorites
+    </h2>
+    <% profile.bands.forEach(band => { %>
+      <h3>
+        <%= getBand() %>
+        <%= band.name %>'s <%= band.album %> | Genre: <%= band.genre %>
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any favorite bands...are you ok? 
+    </h2>
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %>

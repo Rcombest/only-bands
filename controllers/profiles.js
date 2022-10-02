@@ -22,6 +22,10 @@ function show(req, res) {
       title: `${profile.name}'s profile`,
       profile,
       isSelf,
+      getBand: () => {
+        const bands = ["🎵", "🧑‍🎤", "🎻", "🎼", "🎺", "🪕", "🪗", "🪘", "🎹", "🎸", "🎶", "🎷", "🥁", "🎤", "👩‍🎤", "👨‍🎤"]
+        return bands[Math.floor(Math.random() * bands.length)]
+      }
     })
   })
   .catch((err) => {
@@ -30,7 +34,27 @@ function show(req, res) {
   })
 }
 
+function createBand(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.bands.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
 export {
   index,
   show,
+  createBand,
 }
