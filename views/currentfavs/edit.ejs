@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit this Fav 🚧🎵</h1>
+  <form action="/currentfavs/<%= currentfav._id %>?_method=PUT" method="POST">
+    <label>
+      Song:
+      <input 
+        type="text"
+        name="song"
+        value="<%= currentfav.song %>"
+        autocomplete="off"
+        >
+    </label>
+    <button type="submit">Update your fav🎵</button>
+  </form>
+</section>
+
+
+
+<%- include('../partials/footer') %>

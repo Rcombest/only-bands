@@ -6,6 +6,7 @@ const router = Router()
 
 router.get('/', currentfavsCtrl.index)
 router.get('/:id', currentfavsCtrl.show)
+router.get('/:id/edit', isLoggedIn, currentfavsCtrl.edit)
 router.post('/', isLoggedIn, currentfavsCtrl.create)
 
 

@@ -4,6 +4,11 @@
 <section>
 	<p><%= currentfav.owner.name %> is feeling this one!</p>
   <h1>🔥<%= currentfav.song %> by <%= currentfav.band %>🔥</h1>
+  <% if (currentfav.owner.equals(user?.profile._id)) { %>
+    <a href="/currentfavs/<%= currentfav._id %>/edit">
+      <button class="btn">Edit Fav Song</button>
+    </a>
+  <% } %> 
 </section>
 
 <%- include('../partials/footer') %>

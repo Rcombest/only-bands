@@ -32,7 +32,21 @@ function show(req, res) {
   .then(currentfav => {
     res.render('currentfavs/show', {
       currentfav,
-      title: "current favs show"
+      title: "currentfavs show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/currentfavs')
+  })
+}
+
+function edit(req, res) {
+  CurrentFav.findById(req.params.id)
+  .then(currentfav => {
+    res.render('currentfavs/edit', {
+      currentfav,
+      title: 'edit currentfavs'
     })
   })
   .catch(err => {
@@ -45,4 +59,5 @@ export {
   index,
   create,
   show,
+  edit,
 }
