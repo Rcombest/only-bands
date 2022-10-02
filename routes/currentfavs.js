@@ -9,6 +9,7 @@ router.get('/:id', currentfavsCtrl.show)
 router.get('/:id/edit', isLoggedIn, currentfavsCtrl.edit)
 router.post('/', isLoggedIn, currentfavsCtrl.create)
 router.put('/:id', isLoggedIn, currentfavsCtrl.update)
+router.delete('/:id', isLoggedIn, currentfavsCtrl.delete)
 
 
 export {

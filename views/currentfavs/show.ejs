@@ -8,6 +8,9 @@
     <a href="/currentfavs/<%= currentfav._id %>/edit">
       <button class="btn">Edit Fav Song</button>
     </a>
+    <form action="/currentfavs/<%= currentfav._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete this fav ❌</button>
+    </form>
   <% } %> 
 </section>
 

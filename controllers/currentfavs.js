@@ -73,10 +73,29 @@ function update(req, res){
   })
 }
 
+function deleteFav(req, res) {
+  CurrentFav.findById(req.params.id)
+  .then(currentfav => {
+    if (currentfav.owner.equals(req.user.profile._id)) {
+      currentfav.delete()
+      .then(() => {
+        res.redirect('/currentfavs')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/currentfavs')
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
   update,
+  deleteFav as delete,
 }
