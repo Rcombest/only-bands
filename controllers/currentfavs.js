@@ -55,9 +55,28 @@ function edit(req, res) {
   })
 }
 
+function update(req, res){
+  CurrentFav.findById(req.params.id)
+  .then(currentfav => {
+    if (currentfav.owner.equals(req.user.profile._id)) {
+      currentfav.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/currentfavs/${currentfav._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/currentfavs')
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
+  update,
 }
