@@ -1,0 +1,15 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit Fav Album 💿</h1>
+  <form action="/profiles/<%= profile._id %>/bands/<%= band._id %>?_method=PUT" method="POST">
+    <label>
+      Fav Album:
+      <input type="text" name="album" value= "<%= band.album %> "autocomplete="off">
+    </label>
+    <button type="submit">Update Fav Album 💿</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

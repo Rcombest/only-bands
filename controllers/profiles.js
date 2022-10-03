@@ -68,9 +68,48 @@ function deleteBand(req, res) {
   })
 }
 
+function edit(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    const band = profile.bands.id(req.params.bandID) 
+    res.render(`profiles/edit`, {
+      profile,
+      band,
+      title: "edit album"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
+function update(req, res) {
+  console.log(req.body)
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const band = profile.bands.id(req.params.bandId)
+    band.set(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
 export {
   index,
   show,
   createBand,
   deleteBand,
+  edit,
+  update,
 }
