@@ -43,3 +43,17 @@ Only-Bands is an app for more than just bands! It allows users to share their fa
 
 
 [Planning Materials](https://trello.com/b/mCcN2jSN/onlybands)
+
+## Shout-Outs
+
+I want to thank David, Ian, Hunter, Joe and Beryl for all their assistance during this project whether it had to do with routes, functions, favicons, or just taking time to speak with me when I was burnt out and struggling.
+
+
+
+
+I want to thank Emily and Cory for taking time out of their days to help test and troubleshoot with all of us through slack, and Ben for being present and offering encouragement despite being on vacation!
+
+
+
+
+Finally, I want to thank Emily, Jackson, and Beryl for their help in TA hours!
