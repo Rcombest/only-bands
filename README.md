@@ -23,6 +23,7 @@ Only-Bands is an app for more than just bands! It allows users to share their fa
 
 - Azure 
 - CSS
+- EJS
 - Express
 - Google OAuth
 - HTML
