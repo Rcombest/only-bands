@@ -6,7 +6,7 @@
   <form action="/profiles/<%= profile._id %>/bands/<%= band._id %>?_method=PUT" method="POST">
     <label>
       Fav Album:
-      <input type="text" name="album" value= "<%= band.album %> "autocomplete="off">
+      <input type="text" name="album" value= "<%= band.album %> "autocomplete="off" required>
     </label>
     <button type="submit">Update Fav Album 💿</button>
   </form>

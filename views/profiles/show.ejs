@@ -15,15 +15,15 @@
     <form action="/profiles/<%= profile._id %>/bands" method="POST">
       <label>
         Band Name:
-        <input type="text" name="name" autocomplete="off">
+        <input type="text" name="name" autocomplete="off" required>
       </label>
       <label>
         Fav Album:
-        <input type="text" name="album" autocomplete="off">
+        <input type="text" name="album" autocomplete="off" required>
       </label>
       <label>
         Genre:
-        <input type="text" name="genre" autocomplete="off">
+        <input type="text" name="genre" autocomplete="off" required>
       </label>
       <button type="submit">🎵Add Fav Band🎵</button>
     </form>
