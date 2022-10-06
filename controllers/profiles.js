@@ -69,9 +69,9 @@ function deleteBand(req, res) {
 }
 
 function edit(req, res) {
-  Profile.findById(req.params.id)
+  Profile.findById(req.params.profileId)
   .then(profile => {
-    const band = profile.bands.id(req.params.bandID) 
+    const band = profile.bands.id(req.params.bandId) 
     res.render(`profiles/edit`, {
       profile,
       band,

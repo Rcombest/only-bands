@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.get('/bands/:bandID/edit/:id', isLoggedIn, profilesCtrl.edit)
+router.get('/:profileId/bands/:bandId/edit', isLoggedIn, profilesCtrl.edit)
 router.post('/:id/bands', isLoggedIn, profilesCtrl.createBand)
 router.put("/:profileId/bands/:bandId", isLoggedIn, profilesCtrl.update)
 router.delete('/bands/:id', isLoggedIn, profilesCtrl.deleteBand)
