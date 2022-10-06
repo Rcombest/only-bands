@@ -14,3 +14,9 @@ Only-Bands is an app for more than just bands! A feature available to guests and
 - MongoDB
 - Mongoose
 - Node
+
+## Icebox Items
+
+- Reactions on songs added to the Current User Fav's page
+- Comment functionality for the Current User Fav's page
+- A new page for users to enter a brief description of the albums from their personal favorites list
