@@ -57,3 +57,16 @@ I want to thank Emily and Cory for taking time out of their days to help test an
 
 
 Finally, I want to thank Emily, Jackson, and Beryl for their help in TA hours!
+
+## Screenshots
+
+![Screenshot of the Current User Fav's page](public/assets/currentfavs.png)
+
+
+![Screenshot of the Profiles page](public/assets/profiles.png)
+
+
+![Screenshot of ones own profile](public/assets/myprofile.png)
+
+
+![Screenshot of someone else's profile](public/assets/userprofile.png)
