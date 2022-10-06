@@ -33,9 +33,9 @@ Only-Bands is an app for more than just bands! It allows users to share their fa
 
 ## Icebox Items
 
-- Reactions on songs added to the Current User Fav's page
-- Comment functionality for the Current User Fav's page
-- A new page for users to enter a brief description of the albums from their personal favorites list
+- [ ] Reactions on songs added to the Current User Fav's page
+- [ ] Comment functionality for the Current User Fav's page
+- [ ] A new page for users to enter a brief description of the albums from their personal favorites list
 
 ## Links
 
